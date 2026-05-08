@@ -1,22 +1,19 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { getDb } from '@/lib/db';
+import { initialFoods } from '@/lib/db';
 
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   const query = searchParams.get('q');
 
   try {
-    const db = await getDb();
-
     if (!query) {
       // Return all foods if no query
-      const foods = await db.all('SELECT * FROM foods LIMIT 50');
-      return NextResponse.json(foods);
+      return NextResponse.json(initialFoods);
     }
 
-    const foods = await db.all(
-      'SELECT * FROM foods WHERE name LIKE ? LIMIT 50',
-      [`%${query}%`]
+    const searchTerm = query.toLowerCase();
+    const foods = initialFoods.filter(food =>
+      food.name.toLowerCase().includes(searchTerm)
     );
 
     return NextResponse.json(foods);
