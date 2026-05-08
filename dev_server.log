@@ -1,0 +1,16 @@
+
+> gym-diet-app@0.1.0 dev
+> next dev
+
+▲ Next.js 16.2.6 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://192.168.0.2:3000
+✓ Ready in 595ms
+
+○ Compiling / ...
+ GET / 200 in 7.3s (next.js: 6.7s, application-code: 573ms)
+ GET /api/diet/suggest?goal=muscle_gain&weight=75 200 in 1813ms (next.js: 1802ms, application-code: 11ms)
+ GET /api/food/search?q=Chicken 200 in 27ms (next.js: 11ms, application-code: 16ms)
+ GET /api/food/search?q= 200 in 1695ms (next.js: 1449ms, application-code: 246ms)
+ GET /api/diet/suggest?goal=weight_loss&weight=75 200 in 10ms (next.js: 5ms, application-code: 5ms)
+ GET /api/diet/suggest?goal=weight_loss&weight=80 200 in 9ms (next.js: 3ms, application-code: 6ms)
